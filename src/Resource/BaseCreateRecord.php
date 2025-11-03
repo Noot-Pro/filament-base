@@ -2,4 +2,6 @@
 
 namespace NootPro\FilamentBase\Resource;
 
-class BaseCreateRecord {}
+use Filament\Resources\Pages\CreateRecord;
+
+class BaseCreateRecord extends CreateRecord{}

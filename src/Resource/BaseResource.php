@@ -2,4 +2,6 @@
 
 namespace NootPro\FilamentBase\Resource;
 
-class BaseResource {}
+use Filament\Resources\Resource;
+
+class BaseResource extends Resource {}

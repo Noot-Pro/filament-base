@@ -2,4 +2,6 @@
 
 namespace NootPro\FilamentBase\Resource;
 
-class BaseListRecords {}
+use Filament\Resources\Pages\ListRecords;
+
+class BaseListRecords extends ListRecords{}
