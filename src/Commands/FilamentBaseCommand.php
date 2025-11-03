@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace NootPro\FilamentBase\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentBaseCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-base';
 
     public $description = 'My command';
 

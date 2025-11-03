@@ -1,15 +1,15 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace NootPro\FilamentBase;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class FilamentBasePlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-base';
     }
 
     public function register(Panel $panel): void
