@@ -146,7 +146,7 @@ class FilamentBaseServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-base_table',
+//            'create_filament-base_table',
         ];
     }
 }
