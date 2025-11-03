@@ -13,11 +13,11 @@ class BaseResource extends Resource
 
     public static function getModelLabel(): string
     {
-        return __(static::langFile().'.titleSingle');
+        return __(static::langFile() . '.titleSingle');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __(static::langFile().'.title');
+        return __(static::langFile() . '.title');
     }
 }
