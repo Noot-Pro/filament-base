@@ -2,7 +2,4 @@
 
 namespace NootPro\FilamentBase\Resource;
 
-class BaseListRecords
-{
-
-}
+class BaseListRecords {}

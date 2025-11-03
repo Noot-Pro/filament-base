@@ -10,11 +10,11 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use NootPro\FilamentBase\Commands\FilamentBaseCommand;
+use NootPro\FilamentBase\Testing\TestsFilamentBase;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use NootPro\FilamentBase\Commands\FilamentBaseCommand;
-use NootPro\FilamentBase\Testing\TestsFilamentBase;
 
 class FilamentBaseServiceProvider extends PackageServiceProvider
 {
@@ -146,7 +146,7 @@ class FilamentBaseServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-//            'create_filament-base_table',
+            //            'create_filament-base_table',
         ];
     }
 }
