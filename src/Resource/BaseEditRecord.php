@@ -27,22 +27,22 @@ class BaseEditRecord extends EditRecord
     public function getRecordInformationAction(): Action
     {
         return Action::make('record_information')
-            ->label(__('app.record_info'))
-            ->icon('tabler-info-circle-filled')
+            ->label(__('Record info'))
+            ->icon('heroicon-o-information-circle')
             ->slideOver()
             ->modalWidth(MaxWidth::Small)
-            ->modalCancelActionLabel(__('app.close'))
+            ->modalCancelActionLabel(__('Close'))
             ->modalSubmitAction(false)
             ->form(function () {
                 return [
                     Grid::make()
                         ->schema([
-                            Section::make(__('app.record_info'))
+                            Section::make(__('Record info'))
                                 ->columns(1)
                                 ->compact()
                                 ->schema([
                                     Placeholder::make('created_at')
-                                        ->label(__('app.created_at'))
+                                        ->label(__('Created at'))
                                         ->content(fn ($record): string => $record?->created_at
                                             ? $record->created_at->translatedFormat('Y/m/d - h:i A')
                                             : '-'),
@@ -55,10 +55,10 @@ class BaseEditRecord extends EditRecord
                                             'column' => 'created-by',
                                             'record' => $record,
                                         ]))
-                                        ->label(__('app.created_by')),
+                                        ->label(__('Created by')),
 
                                     Placeholder::make('updated_at')
-                                        ->label(__('app.updated_at'))
+                                        ->label(__('Updated at'))
                                         ->content(fn ($record): string => $record?->updated_at
                                             ? $record->updated_at->translatedFormat('Y/m/d - h:i A')
                                             : '-'),
@@ -71,9 +71,9 @@ class BaseEditRecord extends EditRecord
                                             'column' => 'updated-by',
                                             'record' => $record,
                                         ]))
-                                        ->label(__('app.updated_by')),
+                                        ->label(__('Updated by')),
                                 ])
-                                ->icon('tabler-info-circle-filled')
+                                ->icon('heroicon-o-information-circle')
                                 ->collapsible(),
                         ]),
                 ];
