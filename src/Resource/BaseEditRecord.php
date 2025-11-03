@@ -11,6 +11,7 @@ use Filament\Forms\Components\Section;
 use Filament\Resources\Pages\EditRecord;
 use Filament\Support\Enums\MaxWidth;
 use LaraZeus\Popover\Form\PopoverForm;
+use NootPro\FilamentBase\Actions\RecordInformationAction;
 
 class BaseEditRecord extends EditRecord
 {
@@ -20,63 +21,7 @@ class BaseEditRecord extends EditRecord
             ...parent::getHeaderActions(),
             ViewAction::make()->visible(static::getResource()::hasPage('view')),
             DeleteAction::make(),
-            $this->getRecordInformationAction(),
+            RecordInformationAction::make(),
         ];
-    }
-
-    public function getRecordInformationAction(): Action
-    {
-        return Action::make('record_information')
-            ->label(__('Record info'))
-            ->icon('heroicon-o-information-circle')
-            ->slideOver()
-            ->modalWidth(MaxWidth::Small)
-            ->modalCancelActionLabel(__('Close'))
-            ->modalSubmitAction(false)
-            ->form(function () {
-                return [
-                    Grid::make()
-                        ->schema([
-                            Section::make(__('Record info'))
-                                ->columns(1)
-                                ->compact()
-                                ->schema([
-                                    Placeholder::make('created_at')
-                                        ->label(__('Created at'))
-                                        ->content(fn ($record): string => $record?->created_at
-                                            ? $record->created_at->translatedFormat('Y/m/d - h:i A')
-                                            : '-'),
-
-                                    PopoverForm::make('created_by')
-                                        ->formatStateUsing(fn ($record) => $record?->createdBy?->name)
-                                        ->placement('right')
-                                        ->content(fn ($record) => view('filament-base::user-card', [
-                                            'user' => $record?->createdBy,
-                                            'column' => 'created-by',
-                                            'record' => $record,
-                                        ]))
-                                        ->label(__('Created by')),
-
-                                    Placeholder::make('updated_at')
-                                        ->label(__('Updated at'))
-                                        ->content(fn ($record): string => $record?->updated_at
-                                            ? $record->updated_at->translatedFormat('Y/m/d - h:i A')
-                                            : '-'),
-
-                                    PopoverForm::make('updated_by')
-                                        ->formatStateUsing(fn ($record) => $record?->updatedBy?->name)
-                                        ->placement('right')
-                                        ->content(fn ($record) => view('filament-base::user-card', [
-                                            'user' => $record?->updatedBy,
-                                            'column' => 'updated-by',
-                                            'record' => $record,
-                                        ]))
-                                        ->label(__('Updated by')),
-                                ])
-                                ->icon('heroicon-o-information-circle')
-                                ->collapsible(),
-                        ]),
-                ];
-            });
     }
 }
