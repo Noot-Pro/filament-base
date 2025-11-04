@@ -35,7 +35,7 @@ class MultiLang extends Tabs
                     $langCode = (string) $lang;
                     $langName = $info['name'];
 
-                    $tabs[] = Tabs\Tab::make('tab-'.$langCode)
+                    $tabs[] = Tabs\Tab::make('tab-' . $langCode)
                         ->statePath($this->getLangKey())
                         ->label($langName)
                         ->schema(fn (Tabs\Tab $tabComponent) => [
