@@ -2,7 +2,8 @@
 
 namespace NootPro\FilamentBase\Forms\Components;
 
-use Filament\Forms\Components\Tabs;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 
 class MultiLang extends Tabs
@@ -35,10 +36,10 @@ class MultiLang extends Tabs
                     $langCode = (string) $lang;
                     $langName = $info['name'];
 
-                    $tabs[] = Tabs\Tab::make('tab-' . $langCode)
+                    $tabs[] = Tab::make('tab-' . $langCode)
                         ->statePath($this->getLangKey())
                         ->label($langName)
-                        ->schema(fn (Tabs\Tab $tabComponent) => [
+                        ->schema(fn (Tab $tabComponent) => [
                             TextInput::make($langCode)
                                 ->required(fn () => app()->getLocale() === $langCode)
                                 ->label(fn () => $multiLangComponent->getLabel()),

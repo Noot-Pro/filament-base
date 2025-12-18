@@ -2,11 +2,11 @@
 
 namespace NootPro\FilamentBase\Actions;
 
+use Filament\Support\Enums\Width;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Actions\Action;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
-use Filament\Support\Enums\MaxWidth;
 use LaraZeus\Popover\Form\PopoverForm;
 
 class RecordInformationAction extends Action
@@ -23,10 +23,10 @@ class RecordInformationAction extends Action
         $this->label(__('Record info'))
             ->icon('heroicon-o-information-circle')
             ->slideOver()
-            ->modalWidth(MaxWidth::Small)
+            ->modalWidth(Width::Small)
             ->modalCancelActionLabel(__('Close'))
             ->modalSubmitAction(false)
-            ->form(function () {
+            ->schema(function () {
                 return [
                     Grid::make()
                         ->schema([
