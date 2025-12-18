@@ -2,11 +2,11 @@
 
 namespace NootPro\FilamentBase\Actions;
 
-use Filament\Support\Enums\Width;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Placeholder;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Support\Enums\Width;
 use LaraZeus\Popover\Form\PopoverForm;
 
 class RecordInformationAction extends Action

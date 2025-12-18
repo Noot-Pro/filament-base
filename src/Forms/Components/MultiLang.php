@@ -2,9 +2,9 @@
 
 namespace NootPro\FilamentBase\Forms\Components;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Forms\Components\TextInput;
 
 class MultiLang extends Tabs
 {
