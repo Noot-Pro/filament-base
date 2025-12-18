@@ -26,7 +26,6 @@
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
-        "filament/upgrade": "4.0",
         "larastan/larastan": "*",
         "laravel/pint": "*",
         "orchestra/testbench": "^10.8",
