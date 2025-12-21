@@ -4,42 +4,42 @@
 /** .fi-multi-lang-input */
 .fi-multi-lang-input {
     & > div {
-        @apply m-0 p-0 !important;
+        @apply !m-0 !p-0;
     }
 
     .fi-tabs-item {
-        @apply p-4 border border-gray-300 z-50 !important;
+        @apply !p-4 !border !border-gray-300 !z-50;
 
         &:not(.fi-tabs-item-active) {
-            @apply hover:bg-transparent !important;
+            @apply hover:!bg-transparent;
         }
 
         &.fi-tabs-item-active {
-            @apply border-primary-600 dark:border-primary-600 !important;
+            @apply !border-primary-600 dark:!border-primary-600;
         }
     }
 }
 
 .fi-multi-lang-input {
-    @apply relative p-0 border-0 !important;
+    @apply !relative !p-0 !border-0;
 }
 
 .fi-multi-lang-input .fi-fo-tabs-tab{
-    @apply p-0 !important;
+    @apply !p-0;
 }
 
 .fi-fo-tabs.fi-multi-lang-input .fi-tabs {
-    @apply absolute top-[-1px] start-auto end-0 border-0 px-0 py-1 m-0 bg-transparent z-0 rounded-none !important;
+    @apply !absolute !top-[-1px] !start-auto !end-0 !border-0 !px-0 !py-1 !m-0 !bg-transparent !z-0 !rounded-none;
 }
 
 .fi-fo-tabs.fi-multi-lang-input .fi-fo-component-ctn {
-    @apply p-0 !important;
+    @apply !p-0;
 }
 
 .fi-fo-tabs.fi-multi-lang-input .fi-tabs-item {
-    @apply p-1 py-1 px-1 text-xs rounded !important;
+    @apply !p-1 !py-1 !px-1 !text-xs !rounded;
 }
 
 .fi-multi-lang-input .fi-tabs-item span {
-    @apply bg-transparent !important;
+    @apply !bg-transparent;
 }
