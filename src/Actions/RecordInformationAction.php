@@ -3,9 +3,9 @@
 namespace NootPro\FilamentBase\Actions;
 
 use Filament\Actions\Action;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Infolists\Components\TextEntry;
 use Filament\Support\Enums\Width;
 use LaraZeus\Popover\Form\PopoverForm;
 

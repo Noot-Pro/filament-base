@@ -12,7 +12,7 @@ class MultiLang extends Tabs
 {
     public string $langKey = '';
 
-    public static function make(Closure|Htmlable|string|null $label = null): static
+    public static function make(Closure | Htmlable | string | null $label = null): static
     {
         static::configureUsing(function (self $component) use ($label) {
             if ($label !== null && is_string($label)) {
