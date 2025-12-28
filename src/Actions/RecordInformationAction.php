@@ -31,7 +31,7 @@ class RecordInformationAction extends Action
                     Grid::make()
                         ->schema([
                             Section::make(__('Record info'))
-                                ->columns(1)
+                                ->columnSpanFull()
                                 ->compact()
                                 ->schema([
                                     Placeholder::make('created_at')
@@ -41,6 +41,7 @@ class RecordInformationAction extends Action
                                             : '-'),
 
                                     PopoverForm::make('created_by')
+                                        ->icon('heroicon-m-user')
                                         ->formatStateUsing(fn ($record) => $record?->createdBy?->name)
                                         ->placement('right')
                                         ->content(fn ($record) => view('filament-base::user-card', [
@@ -57,6 +58,7 @@ class RecordInformationAction extends Action
                                             : '-'),
 
                                     PopoverForm::make('updated_by')
+                                        ->icon('heroicon-m-user')
                                         ->formatStateUsing(fn ($record) => $record?->updatedBy?->name)
                                         ->placement('right')
                                         ->content(fn ($record) => view('filament-base::user-card', [
