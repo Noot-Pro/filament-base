@@ -2,18 +2,20 @@
 
 namespace NootPro\FilamentBase\Forms\Components;
 
+use Closure;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
+use Illuminate\Contracts\Support\Htmlable;
 
 class MultiLang extends Tabs
 {
     public string $langKey = '';
 
-    public static function make(?string $label = null): static
+    public static function make(Closure|Htmlable|string|null $label = null): static
     {
         static::configureUsing(function (self $component) use ($label) {
-            if ($label !== null) {
+            if ($label !== null && is_string($label)) {
                 $component->langKey = $label;
             }
         });
