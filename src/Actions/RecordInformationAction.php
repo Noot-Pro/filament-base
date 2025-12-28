@@ -3,9 +3,9 @@
 namespace NootPro\FilamentBase\Actions;
 
 use Filament\Actions\Action;
-use Filament\Forms\Components\Placeholder;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Support\Enums\Width;
 use LaraZeus\Popover\Form\PopoverForm;
 
@@ -34,11 +34,10 @@ class RecordInformationAction extends Action
                                 ->columnSpanFull()
                                 ->compact()
                                 ->schema([
-                                    Placeholder::make('created_at')
+                                    TextEntry::make('created_at')
                                         ->label(__('Created at'))
-                                        ->content(fn ($record): string => $record?->created_at
-                                            ? $record->created_at->translatedFormat('Y/m/d - h:i A')
-                                            : '-'),
+                                        ->placeholder('-')
+                                        ->dateTime('Y/m/d - h:i A'),
 
                                     PopoverForm::make('created_by')
                                         ->icon('heroicon-m-user')
@@ -51,11 +50,10 @@ class RecordInformationAction extends Action
                                         ]))
                                         ->label(__('Created by')),
 
-                                    Placeholder::make('updated_at')
+                                    TextEntry::make('updated_at')
                                         ->label(__('Updated at'))
-                                        ->content(fn ($record): string => $record?->updated_at
-                                            ? $record->updated_at->translatedFormat('Y/m/d - h:i A')
-                                            : '-'),
+                                        ->placeholder('-')
+                                        ->dateTime('Y/m/d - h:i A'),
 
                                     PopoverForm::make('updated_by')
                                         ->icon('heroicon-m-user')
